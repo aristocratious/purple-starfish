@@ -1,6 +1,9 @@
 import os
+from dotenv import load_dotenv
 
 class DefaultConfig(object):
+    #load_env_variables
+    load_dotenv()
 
     PROJECT = "Hello Shopify"
     PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
@@ -18,4 +21,4 @@ class DefaultConfig(object):
     SQLALCHEMY_ECHO = True
 
     SHOPIFY_API_KEY = '8fbd25d888170e0ad7dde58427374a1e'
-    SHOPIFY_SHARED_SECRET = 'b3f91f3c58a4561e69c5e753faa48fcb'
+    SHOPIFY_SHARED_SECRET = os.getenv("SHOPIFY_SHARED_SECRET")
